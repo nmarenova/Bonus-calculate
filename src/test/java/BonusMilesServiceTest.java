@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class BonusMilesServiceTest {
 
     @Test
-    void shudCalculateForRegistreredUnderLimit() {
+    void shouldCalculateForRegistreredUnderLimit() {
         BonusMilesService service = new BonusMilesService();
         int price = 10_000;
         boolean registered = true;
@@ -15,9 +15,9 @@ class BonusMilesServiceTest {
     }
 
     @Test
-    void shudCalculateForRegistreredOverLimit() {
+    void shouldCalculateForRegistreredOverLimit() {
         BonusMilesService service = new BonusMilesService();
-        int price = 1000_000_60;
+        int price = 1_000_000_60;
         boolean registered = true;
         int miles = service.calculate(price, registered);
         int expected = 500;
@@ -25,7 +25,7 @@ class BonusMilesServiceTest {
     }
 
     @Test
-    void shudCalculateForUnregistrered() {
+    void shouldCalculateForUnregistrered() {
         BonusMilesService service = new BonusMilesService();
         int price = 10_000;
         boolean registered = false;
